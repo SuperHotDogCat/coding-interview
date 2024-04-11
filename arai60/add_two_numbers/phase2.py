@@ -17,10 +17,11 @@ def createNewReverseLinkedListFromNumber(number):
     new_reverse_linked_list = ListNode()
     current_node = new_reverse_linked_list # shallow copy
     string_num = str(number)
-    for index in range(len(string_num)):
-        current_node.val = int(string_num[-index-1])
+    new_reverse_linked_list_elements = list(reversed(string_num)) # ex. "123" -> ["3", "2", "1"]
+    for index, number in enumerate(new_reverse_linked_list_elements):
+        current_node.val = int(number)
 
-        if index != len(string_num) - 1:
+        if index != len(new_reverse_linked_list_elements) - 1:
             current_node.next = ListNode()
             current_node = current_node.next
     return new_reverse_linked_list
