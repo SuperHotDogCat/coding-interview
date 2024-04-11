@@ -5,11 +5,11 @@
 #         self.next = next
 
 def retrieveReverseNumber(listnode):
-    order = 1
+    digit = 1
     reverse_number = 0
     while listnode != None:
-        reverse_number += listnode.val * order
-        order = order * 10 # shift a digit
+        reverse_number += listnode.val * digit
+        digit = digit * 10 # shift a digit
         listnode = listnode.next # go to next node
     return reverse_number
 
