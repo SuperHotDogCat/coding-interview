@@ -8,6 +8,7 @@ class Solution:
             if current_focus_string in recently_seen and recently_seen[current_focus_string] >= left_pointer:
                 # current_focus_string in recently_seen: みたことがある
                 # recently_seen[current_focus_string] >= left_pointer 現在注目している区間内にcurrent_focus_stringが含まれている
+                # recently_seen[current_focus_string] < right_pointerなことはこのfor文内部の処理では確定している
                 left_pointer = recently_seen[current_focus_string] + 1
             else:
                 longest_length_substring = max(longest_length_substring, right_pointer - left_pointer + 1)
