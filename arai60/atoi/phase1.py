@@ -69,9 +69,3 @@ def clamp(number: int) -> int:
     elif number < INT_MIN:
         return INT_MIN
     return number
-
-
-print(string_to_integer("3.141590"))
-print(string_to_integer("   -42"))
-print(string_to_integer("+1"))
-print(string_to_integer("00000-42a1234"))
