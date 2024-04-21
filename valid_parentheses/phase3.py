@@ -1,19 +1,19 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        close_brankets_to_open_brankets = {")":"(", "}": "{", "]": "["}
-        open_brankets = close_brankets_to_open_brankets.values()
-        seen_open_brankets = [] #既にみたopen branket
+        close_brackets_to_open_brackets = {")":"(", "}": "{", "]": "["}
+        open_brackets = close_brackets_to_open_brackets.values()
+        seen_open_brackets = [] #既にみたopen bracket
         for char in s:
-            if char in open_brankets:
+            if char in open_brackets:
                 # 追加
-                seen_open_brankets.append(char)
+                seen_open_brackets.append(char)
             
-            elif char in close_brankets_to_open_brankets:
-                if len(seen_open_brankets) == 0:
-                    # seen_open_branketsが空の場合, 対応するopen_branketはない
+            elif char in close_brackets_to_open_brackets:
+                if len(seen_open_brackets) == 0:
+                    # seen_open_bracketsが空の場合, 対応するopen_bracketはない
                     return False
                 
-                elif close_brankets_to_open_brankets[char] != seen_open_brankets.pop():
+                elif close_brackets_to_open_brackets[char] != seen_open_brackets.pop():
                     return False
-        # もし空じゃないなら未処理のopen_branketが残っている
-        return not seen_open_brankets
+        # もし空じゃないなら未処理のopen_bracketが残っている
+        return not seen_open_brackets
