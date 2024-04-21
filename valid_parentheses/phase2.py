@@ -1,9 +1,6 @@
-from collections import deque
-
 class Solution:
     def isValid(self, s: str) -> bool:
-        seen_open_brankets = deque([])
-        last_seen_open_branket = ""
+        seen_open_brankets = []
         close_branket_to_open_branket = {")":"(", "}":"{", "]":"["}
         open_brankets = close_branket_to_open_branket.values() # cheeseNAさんを参考に
         for char in s:
