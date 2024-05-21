@@ -31,3 +31,5 @@ class Solution:
                 head.next = head.next.next
             head = head.next
         return dummy_head
+    
+    
