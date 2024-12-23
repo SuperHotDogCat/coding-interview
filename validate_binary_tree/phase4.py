@@ -8,7 +8,7 @@ class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         return self.isValidBSTHelper(root, None, None)
 
-    def isValidBSTHelper(self, node: Optional[TreeNode], lower_bound: Optional[TreeNode], upper_bound: Optional[TreeNode]) -> bool:
+    def isValidBSTHelper(self, node: Optional[TreeNode], lower_bound: Optional[int], upper_bound: Optional[int]) -> bool:
         if not node:
             return True
 
@@ -17,7 +17,7 @@ class Solution:
         
         return self.isValidBSTHelper(node.left, lower_bound, node.val) and self.isValidBSTHelper(node.right, node.val, upper_bound)
     
-    def isWithinIntervals(self, node: TreeNode, lower_bound: Optional[TreeNode], upper_bound: Optional[TreeNode]) -> bool:
+    def isWithinIntervals(self, node: TreeNode, lower_bound: Optional[int], upper_bound: Optional[int]) -> bool:
         if lower_bound and upper_bound:
             return lower_bound < node.val < upper_bound
         
