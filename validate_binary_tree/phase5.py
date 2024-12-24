@@ -3,8 +3,8 @@ class Solution:
         if not root:
             return True
 
-        left_max, left_min = self.subtreeMinMax(root.left)
-        right_max, right_min = self.subtreeMinMax(root.right)
+        left_max, _ = self.subtreeMinMax(root.left)
+        _, right_min = self.subtreeMinMax(root.right)
 
         if left_max is not None and left_max >= root.val:
             return False
