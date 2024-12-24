@@ -6,9 +6,9 @@ class Solution:
         left_max, _ = self.subtreeMinMax(root.left)
         _, right_min = self.subtreeMinMax(root.right)
 
-        if left_max is not None and left_max >= root.val:
+        if left_max is not None and root.val <= left_max:
             return False
-        if right_min is not None and right_min <= root.val:
+        if right_min is not None and root.val >= right_min:
             return False
 
         return self.isValidBST(root.left) and self.isValidBST(root.right)
