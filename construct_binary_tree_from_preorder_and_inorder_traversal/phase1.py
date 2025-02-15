@@ -17,9 +17,9 @@ class Solution:
         index = inorder.index(root_id)
         node.val = root_id
         left_inorder = inorder[:index]
-        left_preorder = preorder[1:1+len(left_inorder)]
+        left_preorder = preorder[1:1 + len(left_inorder)]
         right_inorder = inorder[index + 1:]
-        right_preorder = preorder[1+len(left_inorder):]
+        right_preorder = preorder[1 + len(left_inorder):]
         node.left = self.buildTree(left_preorder, left_inorder)
         node.right = self.buildTree(right_preorder, right_inorder)
 
